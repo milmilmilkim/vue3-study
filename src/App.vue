@@ -1,30 +1,71 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="content">
+    <nav>
+      <router-link v-for="item in menu" :to="item.path" :key="item.name">
+        {{ item.name }}
+      </router-link>
+    </nav>
+    <router-view />
+  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script lang="ts" setup>
+import { ref } from 'vue';
+
+type Menu = {
+  name: string;
+  path: string;
+};
+
+const menu = ref<Menu[]>([
+  {
+    name: 'Home',
+    path: '/',
+  },
+  {
+    name: 'Pinia',
+    path: '/pinia',
+  },
+  {
+    name: 'Exchange',
+    path: '/exchange',
+  },
+  {
+    name: 'Table',
+    path: '/table',
+  },
+  {
+    name: 'Tetris',
+    path: '/tetris',
+  },
+  {
+    name: 'Canvas',
+    path: '/canvas',
+  },
+]);
+</script>
+
+<style scoped>
+nav {
+  margin-bottom: 20px;
 }
 
-nav {
-  padding: 30px;
+nav a {
+  text-decoration: none;
+  color: #000;
+}
+nav a::after {
+  content: '|';
+  width: 10px;
+  margin: 10px;
+  text-decoration: none;
+  color: #e4e4e4;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.content {
+  padding: 20px;
+  width: 1024px;
+  margin: auto;
+  border: 1px solid #eee;
 }
 </style>

@@ -1,25 +1,53 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import DragView from '../views/DragView.vue';
+import PiniaView from '../views/PiniaView.vue';
+import ExchangeView from '../views/ExchangeView.vue';
+import TableView from '../views/TableView.vue';
+import TetrisView from '../views/TetrisView.vue';
+import CanvasView from '../views/CanvasView.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+    path: '/drag',
+    name: 'drag',
+    component: DragView,
+  },
+  {
+    path: '/pinia',
+    name: 'pinia',
+    component: PiniaView,
+  },
+  {
+    path: '/exchange',
+    name: 'exchange',
+    component: ExchangeView,
+  },
+  {
+    path: '/table',
+    name: 'table',
+    component: TableView,
+  },
+  {
+    path: '/tetris',
+    name: 'tetris',
+    component: TetrisView,
+  },
+  {
+    path: '/canvas',
+    name: 'canvas',
+    component: CanvasView,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
