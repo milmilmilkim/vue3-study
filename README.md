@@ -1,24 +1,4 @@
 # playground
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- 타입스크립트로 작성한 vue3 composition api 컴포넌트 예제
+- html5 canvas 테트리스 튜토리얼 
